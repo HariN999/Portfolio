@@ -78,8 +78,10 @@ const Projects: React.FC = () => {
     'Dynamic filtering based on states and seasons'
   ],
   github: 'https://github.com/HariN999/Season-Spot',
+  demo: 'https://season-spot.vercel.app/',
   status: 'completed'
 }
+
 
   ];
 
