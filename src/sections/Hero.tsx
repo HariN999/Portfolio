@@ -11,7 +11,7 @@ const Hero: React.FC = () => {
 
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/HariFinal.pdf';
+    link.href = '/HariharanNarlakanti_Resume.pdf';
     link.download = 'Narlakanti_Hariharan_Resume.pdf';
     link.click();
   };
