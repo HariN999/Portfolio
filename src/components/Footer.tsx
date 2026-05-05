@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
           <div className="space-y-4">
             <h3 className="text-2xl font-bold">Narlakanti Hariharan</h3>
             <p className="text-gray-400 leading-relaxed">
-              Passionate Software Developer crafting innovative solutions with AI/ML expertise and full-stack capabilities.
+              Final-year CSE student building backend-focused full-stack apps and deployed NLP systems. Open to SDE roles from 2026.
             </p>
           </div>
 
@@ -30,6 +30,7 @@ const Footer: React.FC = () => {
                 { id: 'about', label: 'About' },
                 { id: 'skills', label: 'Skills' },
                 { id: 'projects', label: 'Projects' },
+                { id: 'experience', label: 'Experience' },
                 { id: 'contact', label: 'Contact' },
               ].map((link) => (
                 <button
@@ -74,7 +75,7 @@ const Footer: React.FC = () => {
         <div className="border-t border-gray-800 pt-8">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <p className="text-gray-400 text-sm">
-              © 2025 Narlakanti Hariharan. All rights reserved.
+              © {new Date().getFullYear()} Narlakanti Hariharan. All rights reserved.
             </p>
             
             <div className="flex items-center gap-2 text-gray-400 text-sm">

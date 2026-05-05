@@ -1,5 +1,18 @@
 import React from 'react';
-import { ArrowDown, Download } from 'lucide-react';
+import { ArrowDown, Download, Github } from 'lucide-react';
+
+const heroStyles = `
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
 
 const Hero: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
@@ -17,24 +30,26 @@ const Hero: React.FC = () => {
   };
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-indigo-950 px-4 sm:px-6 lg:px-8">
-      <div className="text-center max-w-4xl mx-auto">
+    <>
+      <style>{heroStyles}</style>
+      <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-50 via-white to-indigo-50 dark:from-gray-900 dark:via-gray-800 dark:to-indigo-950 px-4 sm:px-6 lg:px-8">
+      <div className="text-center max-w-4xl mx-auto pt-28 pb-8">
         <div className="mb-8">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-4">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 dark:text-white mb-4 animate-[fadeInUp_0.6s_ease_both]">
             <span className="block">Hariharan</span>
             <span className="block text-blue-600 dark:text-blue-400">Narlakanti</span>
           </h1>
           
-          <p className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-600 dark:text-gray-300 mb-6">
-            Software Developer | AI/ML Enthusiast
+          <p className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-600 dark:text-gray-300 mb-6 animate-[fadeInUp_0.6s_0.15s_ease_both]">
+            Final-Year CSE Student | Backend + Full-Stack Developer | Deployed AI/NLP Systems
           </p>
           
-          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8 leading-relaxed">
-            Aspiring SDE with a passion for AI/ML, DSA, and building impactful solutions.
+          <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8 leading-relaxed animate-[fadeInUp_0.6s_0.25s_ease_both]">
+            Building backend-focused full-stack applications with production deployments, REST APIs, and applied NLP workflows. Open to SDE roles from 2026.
           </p>
         </div>
 
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12 animate-[fadeInUp_0.6s_0.35s_ease_both]">
           <button
             onClick={() => scrollToSection('contact')}
             className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2"
@@ -42,6 +57,16 @@ const Hero: React.FC = () => {
             Get In Touch
             <ArrowDown size={20} />
           </button>
+
+          <a
+            href="https://github.com/HariN999"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-8 py-4 border-2 border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 flex items-center gap-2 dark:border-blue-400 dark:text-blue-400 dark:hover:bg-blue-400 dark:hover:text-gray-900"
+          >
+            <Github size={20} />
+            GitHub
+          </a>
           
           <button
             onClick={downloadResume}
@@ -50,6 +75,21 @@ const Hero: React.FC = () => {
             <Download size={20} />
             Resume
           </button>
+        </div>
+
+        <div className="flex flex-wrap items-center justify-center gap-6 mb-12 animate-[fadeInUp_0.6s_0.45s_ease_both]">
+          {[
+            { value: '7+', label: 'Projects Built' },
+            { value: '8.80', label: 'CGPA' },
+          ].map((stat) => (
+            <div
+              key={stat.label}
+              className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl px-6 py-4"
+            >
+              <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">{stat.value}</div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">{stat.label}</div>
+            </div>
+          ))}
         </div>
 
         <div className="animate-bounce">
@@ -63,6 +103,7 @@ const Hero: React.FC = () => {
         </div>
       </div>
     </section>
+    </>
   );
 };
 

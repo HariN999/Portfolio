@@ -1,5 +1,5 @@
 import React from 'react';
-import { User, Target, Briefcase } from 'lucide-react';
+import { Target, Briefcase } from 'lucide-react';
 
 const About: React.FC = () => {
   return (
@@ -22,6 +22,10 @@ const About: React.FC = () => {
             src="images/Profile Photo.jpeg"
             alt="Narlakanti Hariharan - Software Developer" 
             className="w-full h-full object-cover"
+            onError={(e) => {
+              const target = e.target as HTMLImageElement;
+              target.style.display = 'none';
+            }}
           />
         </div>
       </div>
@@ -36,38 +40,34 @@ const About: React.FC = () => {
           <div className="space-y-8">
             <div className="prose prose-lg dark:prose-invert">
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-                I am a Computer Science student with strong interests in{' '}
-                <span className="font-semibold text-blue-600 dark:text-blue-400">Full-Stack Development</span>,{' '}
-                <span className="font-semibold text-blue-600 dark:text-blue-400">AI/ML</span>, and{' '}
-                <span className="font-semibold text-blue-600 dark:text-blue-400">DSA</span>. 
-                My goal is to become a confident Software Development Engineer and grow into leadership roles at top product-based companies like MAANG.
+                I'm a final-year CSE student focused on backend and full-stack development. I build deployed web apps with React, FastAPI/Flask, REST APIs, and MongoDB, including an NLP summarizer with separated frontend/backend deployment.
               </p>
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl border border-blue-200 dark:border-blue-800">
+              <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl border border-blue-200 dark:border-blue-800 border-t-4 border-t-blue-500">
                 <div className="flex items-center gap-3 mb-3">
                   <Target className="text-blue-600 dark:text-blue-400" size={24} />
-                  <h3 className="font-semibold text-gray-900 dark:text-white">Current Focus</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-white">Engineering Focus</h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Building full-stack applications and enhancing AI/ML skills through practical projects
+                  Building REST APIs with FastAPI/Flask, React frontends, and database-backed project workflows. Current focus: stronger API design and deployment reliability.
                 </p>
               </div>
 
-              <div className="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-xl border border-indigo-200 dark:border-indigo-800">
+              <div className="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-xl border border-indigo-200 dark:border-indigo-800 border-t-4 border-t-indigo-500">
                 <div className="flex items-center gap-3 mb-3">
                   <Briefcase className="text-indigo-600 dark:text-indigo-400" size={24} />
-                  <h3 className="font-semibold text-gray-900 dark:text-white">Career Goal</h3>
+                  <h3 className="font-semibold text-gray-900 dark:text-white">Target Role</h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Software Development Engineer at top tech companies with leadership aspirations
+                  SDE at a product-based company with strong engineering culture. Mid-term: backend or full-stack engineer building at scale. Long-term: engineering leadership.
                 </p>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-3">
-              {['Problem Solver', 'Team Player', 'Quick Learner', 'Innovation Focused'].map((trait) => (
+              {['FastAPI', 'React', 'REST APIs', 'Deployed Applications'].map((trait) => (
                 <span
                   key={trait}
                   className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium"

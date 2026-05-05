@@ -1,25 +1,31 @@
 import React from 'react';
-import { Code, Database, Brain, Wrench } from 'lucide-react';
+import { Code, Database, Wrench, Cpu } from 'lucide-react';
 
 const Skills: React.FC = () => {
   const skillCategories = [
     {
-      title: 'Languages',
+      title: 'Frontend',
       icon: Code,
-      skills: ['Java', 'Python', 'JavaScript'],
+      skills: ['React', 'JavaScript', 'Tailwind CSS', 'Vercel'],
       color: 'blue',
     },
     {
-      title: 'Frameworks/Tech',
-      icon: Database,
-      skills: ['MERN Stack', 'Git/GitHub', 'RESTful APIs', 'MongoDB'],
+      title: 'Backend & APIs',
+      icon: Wrench,
+      skills: ['FastAPI', 'Flask', 'Node.js', 'Express.js', 'REST APIs'],
       color: 'teal',
     },
     {
-      title: 'Core Strengths',
-      icon: Brain,
-      skills: ['DSA (Python/Java)', 'AI/ML', 'Full-Stack Projects', 'Problem Solving'],
-      color: 'purple',
+      title: 'Data & Auth',
+      icon: Database,
+      skills: ['MongoDB', 'MongoDB Atlas', 'JWT Auth'],
+      color: 'slate',
+    },
+    {
+      title: 'AI / NLP',
+      icon: Cpu,
+      skills: ['Python', 'Transformer Models', 'NLP Pipelines', 'TensorFlow'],
+      color: 'orange',
     },
   ];
 
@@ -43,6 +49,18 @@ const Skills: React.FC = () => {
         icon: 'text-purple-600 dark:text-purple-400',
         skill: 'bg-purple-100 dark:bg-purple-800 text-purple-800 dark:text-purple-200',
       },
+      orange: {
+        bg: 'bg-orange-50 dark:bg-orange-900/20',
+        border: 'border-orange-200 dark:border-orange-800',
+        icon: 'text-orange-600 dark:text-orange-400',
+        skill: 'bg-orange-100 dark:bg-orange-800 text-orange-800 dark:text-orange-200',
+      },
+      slate: {
+        bg: 'bg-slate-50 dark:bg-slate-800/30',
+        border: 'border-slate-200 dark:border-slate-700',
+        icon: 'text-slate-600 dark:text-slate-400',
+        skill: 'bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-200',
+      },
     };
     return colors[color as keyof typeof colors];
   };
@@ -56,11 +74,11 @@ const Skills: React.FC = () => {
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            A comprehensive toolkit for building modern software solutions
+            Project-backed skills demonstrated across deployed applications and GitHub projects.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
           {skillCategories.map((category, index) => {
             const colorClasses = getColorClasses(category.color);
             const IconComponent = category.icon;
@@ -69,6 +87,13 @@ const Skills: React.FC = () => {
               <div
                 key={index}
                 className={`${colorClasses.bg} ${colorClasses.border} border rounded-2xl p-8 hover:shadow-lg transition-all duration-300 transform hover:scale-105`}
+                onMouseEnter={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.boxShadow =
+                    '0 20px 40px -12px rgba(0,0,0,0.15)';
+                }}
+                onMouseLeave={(e) => {
+                  (e.currentTarget as HTMLDivElement).style.boxShadow = '';
+                }}
               >
                 <div className="text-center mb-6">
                   <div className={`inline-flex p-4 rounded-full ${colorClasses.bg} ${colorClasses.border} border-2 mb-4`}>
@@ -101,13 +126,14 @@ const Skills: React.FC = () => {
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              'System Design',
-              'RESTful APIs',
-              'Database Design',
-              'Code Review',
-              'Testing & Debugging',
-              'Performance Optimization',
-              'Cloud Computing',
+              'React',
+              'FastAPI',
+              'REST APIs',
+              'MongoDB',
+              'JWT Auth',
+              'Vercel',
+              'Render',
+              'GitHub',
             ].map((skill) => (
               <span
                 key={skill}

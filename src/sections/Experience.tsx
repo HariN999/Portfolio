@@ -7,11 +7,11 @@ const Experience: React.FC = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            Education & Experience
+            Education & Certifications
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            My academic journey and professional development path
+            Academic background and project-based training certifications.
           </p>
         </div>
 
@@ -66,10 +66,9 @@ const Experience: React.FC = () => {
                           {course}
                         </div>
                       ))}
-                      </div>
                     </div>
                   </div>
-                  
+
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-3">Academic Focus:</h4>
                     <ul className="text-gray-600 dark:text-gray-300 space-y-2">
@@ -106,9 +105,9 @@ const Experience: React.FC = () => {
                     </div>
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    Full Stack Developer - MERN Stack
+                    Full Stack Development — MERN Stack
                   </h3>
-                  <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">Virtual Internship</p>
+                  <p className="text-lg text-gray-600 dark:text-gray-400 mb-4">Project-Based Virtual Training</p>
                   <div className="space-y-2 text-gray-600 dark:text-gray-400">
                     <div className="flex items-center gap-2">
                       <Calendar size={16} />
@@ -125,7 +124,7 @@ const Experience: React.FC = () => {
                   <div>
                     <h4 className="font-semibold text-gray-900 dark:text-white mb-3">Key Projects:</h4>
                     <p className="text-gray-600 dark:text-gray-300 mb-4">
-                      "Successfully completed a comprehensive MERN stack project, including the SocialeX social media application."
+                      Built SocialeX, a full-stack social media application on the MERN stack. Implemented JWT authentication, RESTful APIs, MongoDB schema design, and a React component library with Tailwind CSS. Delivered end-to-end within a structured 2-month timeline.
                     </p>
                   </div>
                   
@@ -134,23 +133,15 @@ const Experience: React.FC = () => {
                     <ul className="text-gray-600 dark:text-gray-300 space-y-2">
                       <li className="flex items-start gap-2">
                         <div className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
-                        Full-stack development using React, Node.js, Express, and MongoDB
+                        Built SocialeX end-to-end: JWT auth, REST APIs, MongoDB, React + Tailwind UI
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
-                        Implementation of user authentication and authorization systems
+                        Learned MERN stack architecture through structured project delivery
                       </li>
                       <li className="flex items-start gap-2">
                         <div className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
-                        Responsive UI design and modern CSS frameworks
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <div className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
-                        RESTful API development and database optimization
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <div className="w-2 h-2 bg-green-600 rounded-full mt-2 flex-shrink-0"></div>
-                        Version control with Git and collaborative development practices
+                        Practiced Git-based version control and collaborative development workflow
                       </li>
                     </ul>
                   </div>
@@ -185,6 +176,7 @@ const Experience: React.FC = () => {
                   </div>
                 </div>
               </div>
+            </div>
           </div>
         </div>
       </div>

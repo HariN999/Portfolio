@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Linkedin, Github, MapPin, Phone, Send, CheckCircle } from 'lucide-react';
+import { Mail, Linkedin, Github, Send, CheckCircle } from 'lucide-react';
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -116,7 +116,7 @@ const Contact: React.FC = () => {
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Let's discuss opportunities, collaborations, or just connect. I'm always open to new challenges and interesting conversations.
+            Open to SDE roles, backend engineering work, and interesting engineering problems.
           </p>
         </div>
 
@@ -128,9 +128,7 @@ const Contact: React.FC = () => {
                 Let's Connect
               </h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-                I'm currently looking for Software Development Engineer opportunities at innovative companies. 
-                Whether you're a recruiter, fellow developer, or someone interested in collaboration, 
-                I'd love to hear from you.
+                Graduating in 2026 and actively looking for SDE roles. Whether you're a recruiter, a fellow developer, or someone building something interesting — reach out.
               </p>
             </div>
 
@@ -160,17 +158,6 @@ const Contact: React.FC = () => {
                 );
               })}
             </div>
-
-            {/* Additional Info */}
-            <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl border border-blue-200 dark:border-blue-800">
-              <h4 className="font-semibold text-gray-900 dark:text-white mb-2">
-                Quick Response Guarantee
-              </h4>
-              <p className="text-gray-600 dark:text-gray-300 text-sm">
-                I typically respond to messages within 24 hours. For urgent inquiries, 
-                feel free to reach out via LinkedIn for faster response times.
-              </p>
-            </div>
           </div>
 
           {/* Contact Form */}
@@ -185,10 +172,10 @@ const Contact: React.FC = () => {
                   <CheckCircle size={48} className="text-green-600 dark:text-green-400" />
                 </div>
                 <h4 className="text-xl font-semibold text-gray-900 dark:text-white mb-2">
-                  Message Sent Successfully!
+                  Email Client Opened!
                 </h4>
                 <p className="text-gray-600 dark:text-gray-300">
-                  Thank you for reaching out. I'll get back to you as soon as possible.
+                  Your email client has been opened with a pre-filled message. Please hit Send to complete your message.
                 </p>
               </div>
             ) : (
