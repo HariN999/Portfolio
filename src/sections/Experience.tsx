@@ -28,12 +28,12 @@ const Experience: React.FC = () => {
                     </div>
                     <div className="flex-1">
                       <span className="px-3 py-1 bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 rounded-full text-sm font-medium">
-                        Current
+                        Completed
                       </span>
                     </div>
                   </div>
                   <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
-                    B.Tech in CSE-AIML
+                    B.Tech in AI & ML
                   </h3>
                   <div className="space-y-2 text-gray-600 dark:text-gray-400">
                     <div className="flex items-center gap-2">

@@ -41,11 +41,11 @@ const Hero: React.FC = () => {
           </h1>
           
           <p className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-600 dark:text-gray-300 mb-6 animate-[fadeInUp_0.6s_0.15s_ease_both]">
-            Final-Year CSE Student | Backend + Full-Stack Developer | Deployed AI/NLP Systems
+            AI Engineer | Backend Developer | Software Engineer
           </p>
           
           <p className="text-lg sm:text-xl text-gray-600 dark:text-gray-400 max-w-3xl mx-auto mb-8 leading-relaxed animate-[fadeInUp_0.6s_0.25s_ease_both]">
-            Building backend-focused full-stack applications with production deployments, REST APIs, and applied NLP workflows. Open to SDE roles from 2026.
+            Building production-ready AI systems, NLP pipelines, and scalable backend services using FastAPI, React, and LLMs.
           </p>
         </div>
 
@@ -79,8 +79,8 @@ const Hero: React.FC = () => {
 
         <div className="flex flex-wrap items-center justify-center gap-6 mb-12 animate-[fadeInUp_0.6s_0.45s_ease_both]">
           {[
-            { value: '7+', label: 'Projects Built' },
-            { value: '8.80', label: 'CGPA' },
+            { value: '10+', label: 'Projects Built' },
+            { value: '8.89', label: 'CGPA' },
           ].map((stat) => (
             <div
               key={stat.label}

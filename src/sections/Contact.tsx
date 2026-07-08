@@ -116,7 +116,7 @@ const Contact: React.FC = () => {
           </h2>
           <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full mb-6"></div>
           <p className="text-lg text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-            Open to SDE roles, backend engineering work, and interesting engineering problems.
+            Open to AI Engineer positions, backend software roles, and interesting engineering problems.
           </p>
         </div>
 
@@ -128,7 +128,7 @@ const Contact: React.FC = () => {
                 Let's Connect
               </h3>
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed mb-8">
-                Graduating in 2026 and actively looking for SDE roles. Whether you're a recruiter, a fellow developer, or someone building something interesting — reach out.
+                Currently looking for AI Engineer, Software Developer, or Backend engineering roles. Whether you're a recruiter, a fellow developer, or someone building something interesting — reach out.
               </p>
             </div>
 

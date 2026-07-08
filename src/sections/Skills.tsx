@@ -4,28 +4,28 @@ import { Code, Database, Wrench, Cpu } from 'lucide-react';
 const Skills: React.FC = () => {
   const skillCategories = [
     {
-      title: 'Frontend',
-      icon: Code,
-      skills: ['React', 'JavaScript', 'Tailwind CSS', 'Vercel'],
-      color: 'blue',
+      title: 'AI / ML / NLP',
+      icon: Cpu,
+      skills: ['Hugging Face Transformers', 'PyTorch', 'SentenceTransformers', 'NLP Pipelines', 'GenAI & LLMs'],
+      color: 'orange',
     },
     {
       title: 'Backend & APIs',
       icon: Wrench,
-      skills: ['FastAPI', 'Flask', 'Node.js', 'Express.js', 'REST APIs'],
+      skills: ['Python', 'FastAPI', 'REST APIs', 'Pydantic', 'Flask'],
       color: 'teal',
     },
     {
-      title: 'Data & Auth',
-      icon: Database,
-      skills: ['MongoDB', 'MongoDB Atlas', 'JWT Auth'],
-      color: 'slate',
+      title: 'Frontend Development',
+      icon: Code,
+      skills: ['React', 'TypeScript', 'Tailwind CSS', 'Vite'],
+      color: 'blue',
     },
     {
-      title: 'AI / NLP',
-      icon: Cpu,
-      skills: ['Python', 'Transformer Models', 'NLP Pipelines', 'TensorFlow'],
-      color: 'orange',
+      title: 'Databases & Tools',
+      icon: Database,
+      skills: ['PostgreSQL', 'MongoDB', 'MySQL', 'Docker', 'Postman', 'Git & GitHub'],
+      color: 'slate',
     },
   ];
 
@@ -126,14 +126,15 @@ const Skills: React.FC = () => {
           </h3>
           <div className="flex flex-wrap justify-center gap-4">
             {[
-              'React',
-              'FastAPI',
-              'REST APIs',
-              'MongoDB',
+              'Data Structures & Algorithms',
+              'LangChain',
+              'RAG',
+              'LLM App Development',
+              'AI System Design',
               'JWT Auth',
-              'Vercel',
+              'Docker',
               'Render',
-              'GitHub',
+              'Vercel',
             ].map((skill) => (
               <span
                 key={skill}

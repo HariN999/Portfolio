@@ -20,7 +20,7 @@ const About: React.FC = () => {
         <div className="w-full h-full rounded-full overflow-hidden">
           <img 
             src="images/Profile Photo.jpeg"
-            alt="Narlakanti Hariharan - Software Developer" 
+            alt="Hariharan Narlakanti - AI Engineer & Backend Developer" 
             className="w-full h-full object-cover"
             onError={(e) => {
               const target = e.target as HTMLImageElement;
@@ -40,7 +40,7 @@ const About: React.FC = () => {
           <div className="space-y-8">
             <div className="prose prose-lg dark:prose-invert">
               <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-                I'm a final-year CSE student focused on backend and full-stack development. I build deployed web apps with React, FastAPI/Flask, REST APIs, and MongoDB, including an NLP summarizer with separated frontend/backend deployment.
+                I'm a Computer Science graduate focused on building AI-powered applications, NLP workflows, FastAPI services, LLM pipelines, and scalable backend systems. I enjoy turning research ideas and machine learning concepts into production-ready software systems with clean, modular architectures.
               </p>
             </div>
 
@@ -51,7 +51,7 @@ const About: React.FC = () => {
                   <h3 className="font-semibold text-gray-900 dark:text-white">Engineering Focus</h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Building REST APIs with FastAPI/Flask, React frontends, and database-backed project workflows. Current focus: stronger API design and deployment reliability.
+                  Designing robust backend services with FastAPI, implementing semantic search indices, integrating generative AI/LLM components, and managing production deployments.
                 </p>
               </div>
 
@@ -61,13 +61,13 @@ const About: React.FC = () => {
                   <h3 className="font-semibold text-gray-900 dark:text-white">Target Role</h3>
                 </div>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  SDE at a product-based company with strong engineering culture. Mid-term: backend or full-stack engineer building at scale. Long-term: engineering leadership.
+                  AI Engineer or Software/Backend Developer roles at product-driven companies. Focus area: NLP workflows, agentic AI logic, and robust microservices at scale.
                 </p>
               </div>
             </div>
 
             <div className="flex flex-wrap gap-3">
-              {['FastAPI', 'React', 'REST APIs', 'Deployed Applications'].map((trait) => (
+              {['FastAPI', 'React', 'Applied NLP', 'LLM Apps', 'Semantic Search', 'REST APIs'].map((trait) => (
                 <span
                   key={trait}
                   className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium"
