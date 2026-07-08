@@ -75,7 +75,7 @@ const Skills: React.FC = () => {
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 mx-auto rounded-full mb-6"></div>
             <p className="text-base text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto font-sans leading-relaxed">
-              Demonstrated backend architecture, data engineering, and machine learning competencies backed by code deployments.
+              Primary languages: <span className="font-semibold text-zinc-900 dark:text-white">Python, TypeScript, SQL</span>. Demonstrated backend architecture, data engineering, and machine learning competencies backed by code deployments.
             </p>
           </motion.div>
         </div>
