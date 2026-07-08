@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <style>
+    text {
+      fill: #09090b;
+    }
+    @media (prefers-color-scheme: dark) {
+      text {
+        fill: #ffffff;
+      }
+    }
+  </style>
+  <text x="50%" y="58%" font-family="system-ui, -apple-system, sans-serif" font-weight="900" font-size="72" text-anchor="middle" dominant-baseline="middle">HN</text>
+</svg>
