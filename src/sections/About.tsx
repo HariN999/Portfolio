@@ -1,81 +1,117 @@
 import React from 'react';
 import { Target, Briefcase } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 const About: React.FC = () => {
   return (
-    <section id="about" className="py-20 bg-white dark:bg-gray-900">
+    <section id="about" className="py-24 bg-white dark:bg-zinc-950 transition-colors duration-300 relative">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-4">
-            About Me
-          </h2>
-          <div className="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.5 }}
+          >
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white mb-4 tracking-tight font-display">
+              About Me
+            </h2>
+            <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 mx-auto rounded-full"></div>
+          </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center justify-items-center">
-  {/* Profile Photo */}
-  <div className="text-center">
-    <div className="relative inline-block">
-      <div className="w-72 h-72 mx-auto rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 p-1 shadow-2xl">
-        <div className="w-full h-full rounded-full overflow-hidden">
-          <img 
-            src="images/Profile Photo.jpeg"
-            alt="Narlakanti Hariharan - Software Developer" 
-            className="w-full h-full object-cover"
-            onError={(e) => {
-              const target = e.target as HTMLImageElement;
-              target.style.display = 'none';
-            }}
-          />
-        </div>
-      </div>
-      <div className="absolute -bottom-4 -right-4 w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center shadow-lg">
-        <Briefcase size={24} className="text-white" />
-      </div>
-    </div>
-  </div>
-
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center max-w-6xl mx-auto">
+          {/* Profile Photo */}
+          <div className="lg:col-span-5 text-center flex justify-center">
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="relative inline-block group"
+            >
+              <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-blue-500 via-indigo-500 to-purple-500 blur-md opacity-40 group-hover:opacity-75 transition-opacity duration-500 -z-10" />
+              <div className="w-72 h-72 mx-auto rounded-full bg-gradient-to-br from-blue-400 to-indigo-600 p-[3px] shadow-2xl relative">
+                <div className="w-full h-full rounded-full overflow-hidden bg-white dark:bg-zinc-950">
+                  <img 
+                    src="images/Profile Photo.jpeg"
+                    alt="Hariharan Narlakanti - AI Engineer & Backend Developer" 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    onError={(e) => {
+                      const target = e.target as HTMLImageElement;
+                      target.style.display = 'none';
+                    }}
+                  />
+                </div>
+              </div>
+              <div className="absolute -bottom-2 -right-2 w-14 h-14 bg-gradient-to-tr from-blue-600 to-indigo-600 rounded-full flex items-center justify-center shadow-lg border-2 border-white dark:border-zinc-950">
+                <Briefcase size={20} className="text-white" />
+              </div>
+            </motion.div>
+          </div>
 
           {/* Content */}
-          <div className="space-y-8">
-            <div className="prose prose-lg dark:prose-invert">
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed text-lg">
-                I'm a final-year CSE student focused on backend and full-stack development. I build deployed web apps with React, FastAPI/Flask, REST APIs, and MongoDB, including an NLP summarizer with separated frontend/backend deployment.
+          <div className="lg:col-span-7 space-y-8">
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+              className="prose prose-lg dark:prose-invert"
+            >
+              <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed text-lg font-normal font-sans">
+                I'm a Computer Science graduate focused on building AI-powered applications, NLP workflows, FastAPI services, LLM pipelines, and scalable backend systems. I enjoy turning research ideas and machine learning concepts into production-ready software systems with clean, modular architectures.
               </p>
-            </div>
+            </motion.div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-              <div className="bg-blue-50 dark:bg-blue-900/20 p-6 rounded-xl border border-blue-200 dark:border-blue-800 border-t-4 border-t-blue-500">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="grid grid-cols-1 sm:grid-cols-2 gap-6"
+            >
+              <div className="bg-white/40 dark:bg-zinc-900/25 backdrop-blur-sm p-6 rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 hover:border-blue-500/30 transition-colors">
                 <div className="flex items-center gap-3 mb-3">
-                  <Target className="text-blue-600 dark:text-blue-400" size={24} />
-                  <h3 className="font-semibold text-gray-900 dark:text-white">Engineering Focus</h3>
+                  <div className="p-2.5 rounded-xl bg-blue-50 dark:bg-blue-900/20 text-blue-600 dark:text-blue-400">
+                    <Target size={20} />
+                  </div>
+                  <h3 className="font-bold text-zinc-900 dark:text-white font-display text-base">Engineering Focus</h3>
                 </div>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  Building REST APIs with FastAPI/Flask, React frontends, and database-backed project workflows. Current focus: stronger API design and deployment reliability.
+                <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed font-sans">
+                  Designing robust backend services with FastAPI, implementing semantic search indices, integrating generative AI/LLM components, and managing production deployments.
                 </p>
               </div>
 
-              <div className="bg-indigo-50 dark:bg-indigo-900/20 p-6 rounded-xl border border-indigo-200 dark:border-indigo-800 border-t-4 border-t-indigo-500">
+              <div className="bg-white/40 dark:bg-zinc-900/25 backdrop-blur-sm p-6 rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 hover:border-indigo-500/30 transition-colors">
                 <div className="flex items-center gap-3 mb-3">
-                  <Briefcase className="text-indigo-600 dark:text-indigo-400" size={24} />
-                  <h3 className="font-semibold text-gray-900 dark:text-white">Target Role</h3>
+                  <div className="p-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400">
+                    <Briefcase size={20} />
+                  </div>
+                  <h3 className="font-bold text-zinc-900 dark:text-white font-display text-base">Target Role</h3>
                 </div>
-                <p className="text-gray-600 dark:text-gray-300 text-sm">
-                  SDE at a product-based company with strong engineering culture. Mid-term: backend or full-stack engineer building at scale. Long-term: engineering leadership.
+                <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed font-sans">
+                  AI Engineer or Software/Backend Developer roles at product-driven companies. Focus area: NLP workflows, agentic AI logic, and robust microservices at scale.
                 </p>
               </div>
-            </div>
+            </motion.div>
 
-            <div className="flex flex-wrap gap-3">
-              {['FastAPI', 'React', 'REST APIs', 'Deployed Applications'].map((trait) => (
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}
+              className="flex flex-wrap gap-2 pt-2"
+            >
+              {['FastAPI', 'React', 'Applied NLP', 'LLM Apps', 'Semantic Search', 'REST APIs'].map((trait) => (
                 <span
                   key={trait}
-                  className="px-4 py-2 bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 rounded-full text-sm font-medium"
+                  className="px-4 py-2 bg-zinc-100 dark:bg-zinc-900/50 border border-zinc-200/50 dark:border-zinc-800/30 text-zinc-700 dark:text-zinc-300 rounded-full text-xs font-bold font-sans uppercase tracking-wider hover:bg-blue-50 dark:hover:bg-blue-950/20 hover:border-blue-500/20 hover:text-blue-600 dark:hover:text-blue-400 transition-colors cursor-default"
                 >
                   {trait}
                 </span>
               ))}
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
