@@ -26,7 +26,7 @@ const Header: React.FC = () => {
           }
         });
       },
-      { threshold: 0.25, rootMargin: '-10% 0px -70% 0px' }
+      { threshold: 0, rootMargin: '-25% 0px -45% 0px' }
     );
 
     ['home', 'about', 'skills', 'projects', 'experience', 'contact'].forEach((id) => {
@@ -42,6 +42,7 @@ const Header: React.FC = () => {
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
+      setActiveSection(sectionId);
       element.scrollIntoView({ behavior: 'smooth' });
       setIsMenuOpen(false);
     }
