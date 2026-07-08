@@ -210,6 +210,7 @@ const Contact: React.FC = () => {
                       name="name"
                       value={formData.name}
                       onChange={handleChange}
+                      aria-label="Full Name"
                       className={`w-full px-4 py-3 text-sm border rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white ${
                         errors.name ? 'border-red-500' : 'border-zinc-200/50 dark:border-zinc-800/50'
                       }`}
@@ -228,6 +229,7 @@ const Contact: React.FC = () => {
                       name="email"
                       value={formData.email}
                       onChange={handleChange}
+                      aria-label="Email Address"
                       className={`w-full px-4 py-3 text-sm border rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white ${
                         errors.email ? 'border-red-500' : 'border-zinc-200/50 dark:border-zinc-800/50'
                       }`}
@@ -247,6 +249,7 @@ const Contact: React.FC = () => {
                     name="subject"
                     value={formData.subject}
                     onChange={handleChange}
+                    aria-label="Subject"
                     className={`w-full px-4 py-3 text-sm border rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white ${
                       errors.subject ? 'border-red-500' : 'border-zinc-200/50 dark:border-zinc-800/50'
                     }`}
@@ -265,6 +268,7 @@ const Contact: React.FC = () => {
                     rows={4}
                     value={formData.message}
                     onChange={handleChange}
+                    aria-label="Message"
                     className={`w-full px-4 py-3 text-sm border rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 resize-none bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white ${
                       errors.message ? 'border-red-500' : 'border-zinc-200/50 dark:border-zinc-800/50'
                     }`}
