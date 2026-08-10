@@ -12,8 +12,8 @@ const Hero: React.FC = () => {
 
   const downloadResume = () => {
     const link = document.createElement('a');
-    link.href = '/HariharanNarlakanti_Resume.pdf';
-    link.download = 'Narlakanti_Hariharan_Resume.pdf';
+    link.href = '/Hariharan_AI_V1.pdf';
+    link.download = 'Hariharan_Narlakanti_Resume.pdf';
     link.click();
   };
 
@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
           </p>
           
           <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto mb-8 leading-relaxed font-sans">
-            Building production-ready AI systems, NLP pipelines, and scalable backend services using FastAPI, React, and LLMs.
+            Building AI applications, NLP pipelines, and scalable backend services using Python, FastAPI, React, and LLMs.
           </p>
         </motion.div>
 
@@ -95,7 +95,7 @@ const Hero: React.FC = () => {
           className="flex flex-wrap items-center justify-center gap-6 mb-12"
         >
           {[
-            { value: '10+', label: 'Projects Built' },
+            { value: '8+', label: 'Projects Built' },
             { value: '8.89', label: 'B.Tech CGPA' },
           ].map((stat) => (
             <div

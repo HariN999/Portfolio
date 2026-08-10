@@ -28,7 +28,7 @@ const Experience: React.FC = () => {
       details: [
         'Built SocialeX, a MERN-based social platform with JWT auth, REST endpoints, and MongoDB.',
         'Practiced Git-based collaborative workflows and agile development practices.',
-        'Completed structured project deliverables within a tight 2-month virtual bootcamp.'
+        'Completed structured project deliverables within a 2-month virtual development program.'
       ],
       coursework: ['React', 'Node.js', 'MongoDB', 'Express.js', 'JWT', 'REST APIs'],
       certificate: 'https://skillwallet.smartinternz.com/certificate/virtual-internship/d203bbe1b9e242a034b376bafda15a99',

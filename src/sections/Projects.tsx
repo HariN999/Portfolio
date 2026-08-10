@@ -16,47 +16,54 @@ interface Project {
 const Projects: React.FC = () => {
   const projects: Project[] = [
     {
-      title: 'Saaram — AI-Powered Telugu Summarization Platform',
+      title: 'Saaram — AI-Powered Telugu News Summarization & Speech Platform',
       duration: 'Jan – Apr 2026',
-      description: 'A FastAPI-based AI inference platform serving 5+ REST endpoints with dynamic model routing, lazy model loading, and neural Text-to-Speech (TTS) audio feedback. Awarded Best Project at Malla Reddy University.',
-      technologies: ['React', 'FastAPI', 'Python', 'Transformers (mT5)', 'Docker', 'Vercel', 'Hugging Face Spaces'],
-      github: 'https://github.com/HariN999/Saaram-telugu-summarizer',
-      demo: 'https://automated-telugu-text-summarization.vercel.app/',
+      description: 'Built a production-deployed hybrid news summarization platform that combines morphology-aware TF-IDF, mT5 base transformer model, and QLoRA fine-tuning. Implemented an adaptive routing engine that dynamically matches articles to optimal inference paths based on complexity and hardware limits, resource-aware fallback mechanisms, and Telugu text-to-speech feedback.',
+      technologies: ['FastAPI', 'React', 'Python', 'Transformers', 'Hugging Face Spaces', 'Vercel', 'Docker'],
+      github: 'https://github.com/HariN999/Automated-Telugu-Text-Summarization-and-Speech-Generation-using-NLP.git',
+      demo: 'https://saaram-nlp.vercel.app/',
       status: 'deployed'
     },
     {
-      title: 'ResearchCompass — AI Research Review Platform',
+      title: 'ResearchCompass — AI Research Paper Analyzer',
       duration: 'Personal Project',
-      description: 'An AI research assistant that parses uploaded PDF papers using PyMuPDF and runs a document intelligence pipeline to generate structured multi-section reviews via Azure AI Foundry LLM APIs.',
-      technologies: ['React', 'FastAPI', 'Python', 'LLM APIs', 'Azure AI Foundry', 'PyMuPDF', 'Vercel'],
+      description: 'Engineered an AI-powered document intelligence service that extracts text from multi-page PDF papers using PyMuPDF and runs a Retrieval-Augmented Generation (RAG) pipeline to generate structured critiques and readiness scorecards. Utilizes SentenceTransformers for vector search, ChromaDB for indexing document chunks, and Groq/Llama 3.3 for structured AI analysis.',
+      technologies: ['Next.js', 'FastAPI', 'Python', 'Groq (Llama-3.3)', 'ChromaDB', 'PyMuPDF', 'Docker'],
       github: 'https://github.com/HariN999/ResearchCompass',
       demo: 'https://research-compass-gray.vercel.app/',
       status: 'deployed'
     },
     {
-      title: 'Smart-FAQ — AI Semantic Search Platform',
+      title: 'VoiceVibes AI — Vocal Emotion Analytics Dashboard',
       duration: 'Personal Project',
-      description: 'A full-stack AI semantic search service utilizing FastAPI, React, and MongoDB, integrating SentenceTransformers to match FAQs contextually via vector queries.',
-      technologies: ['FastAPI', 'React', 'MongoDB', 'Python', 'SentenceTransformers', 'Semantic Search', 'JWT Auth'],
+      description: 'Developed an audio analytics dashboard that processes vocal waveforms directly from standard browser microphone inputs. Features a custom client-side WAV audio encoder delivering mono 16-bit PCM streams and a FastAPI backend running CPU inference via a fine-tuned Wav2Vec2 transformer to visualize real-time 7-class emotional probabilities.',
+      technologies: ['FastAPI', 'React', 'PyTorch', 'Wav2Vec2', 'Web Audio API', 'Docker'],
+      github: 'https://github.com/HariN999/VoiceVibes.git',
+      status: 'completed'
+    },
+    {
+      title: 'Smart-FAQ — Semantic Search Engine',
+      duration: 'Personal Project',
+      description: 'Designed a semantic search system that contextually maps natural language queries to database resources. Implemented a FastAPI service that converts text questions to vector embeddings using SentenceTransformers, query matches using cosine similarity, and interfaces with a MongoDB database for document retrieval, protected by JWT admin authentication.',
+      technologies: ['FastAPI', 'React', 'MongoDB', 'SentenceTransformers', 'PyTorch', 'JWT Auth'],
       github: 'https://github.com/HariN999/Smart-FAQ',
       status: 'completed'
     },
     {
-      title: 'AgroAid — AI-Based Crop Disease Detection',
-      duration: 'Jan 2025 – Mar 2025',
-      description: 'A Flask inference service that integrates a pretrained PyTorch CNN with translation APIs to predict crop disease across 39 categories and output multilingual recommendations.',
-      technologies: ['Python', 'PyTorch', 'CNNs', 'Flask', 'Google Translate API', 'AJAX'],
-      github: 'https://github.com/HariN999/AgroAid',
+      title: 'SocialeX — Real-Time Social Media Application',
+      duration: 'May – Jul 2024',
+      description: 'Built a full-stack real-time social platform featuring live 1-on-1 private messaging, post creation, and 24-hour stories. Engineered an Express/Node.js backend with Socket.io for WebSocket communication, Firebase Storage for rich media hosting, and JWT-authenticated routes for user profiles and feeds.',
+      technologies: ['React', 'Node.js', 'Express.js', 'Socket.io', 'MongoDB', 'Firebase'],
+      github: 'https://github.com/HariN999/SocialeX.git',
       status: 'completed'
     },
     {
-      title: 'Season Spot — Seasonal Recommendation App',
-      duration: '2024',
-      description: 'A React + Flask application serving state-specific seasonal food and travel recommendations from MongoDB Atlas with clean dynamic filter options.',
-      technologies: ['React', 'Flask', 'MongoDB Atlas', 'Python', 'REST APIs'],
-      github: 'https://github.com/HariN999/Season-Spot',
-      demo: 'https://season-spot.vercel.app/',
-      status: 'deployed'
+      title: 'AgroAid — AI-Based Crop Disease Classifier',
+      duration: 'Jan – Mar 2025',
+      description: 'Developed a computer vision crop diagnostics service that processes plant imagery to classify disease across 39 distinct crop categories. Built using a fine-tuned PyTorch Convolutional Neural Network (CNN) with a Flask interface and integrated translation API services for multilingual suggestions.',
+      technologies: ['Python', 'PyTorch', 'CNNs', 'Flask', 'APIs'],
+      github: 'https://github.com/HariN999/AgroAid',
+      status: 'completed'
     }
   ];
 
@@ -85,14 +92,14 @@ const Projects: React.FC = () => {
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 mx-auto rounded-full mb-6"></div>
             <p className="text-base text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto font-sans leading-relaxed">
-              Engineering core services, machine learning APIs, semantic search engines, and agentic workflows.
+              Engineering core services, machine learning APIs, semantic search engines, and real-time backend systems.
             </p>
           </motion.div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => {
-            const isFlagship = index === 0 || index === 1;
+            const isFlagship = index === 0 || index === 1 || index === 2;
             return (
               <motion.div
                 key={index}
@@ -110,7 +117,7 @@ const Projects: React.FC = () => {
                   {isFlagship && (
                     <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-blue-500/10 to-indigo-500/10 dark:from-blue-500/20 dark:to-indigo-500/20 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200/20 dark:border-blue-800/20">
                       <Star size={12} className="fill-current" />
-                      {index === 0 ? 'Featured · Capstone' : 'Featured · AI Agent'}
+                      {index === 0 ? 'Featured · Capstone' : index === 1 ? 'Featured · RAG / Document AI' : 'Featured · Audio AI'}
                     </div>
                   )}
 
