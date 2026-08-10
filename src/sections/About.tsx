@@ -91,7 +91,7 @@ const About: React.FC = () => {
                   <h3 className="font-bold text-zinc-900 dark:text-white font-display text-base">Target Role</h3>
                 </div>
                 <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed font-sans">
-                  AI Engineer or Software/Backend Developer roles at product-driven companies. Focus area: NLP workflows, agentic AI logic, and robust microservices at scale.
+                  AI Engineer, Backend Engineer, or Software Engineer roles focused on AI-powered products and backend systems. Focus area: NLP workflows, agentic AI logic, and robust microservices at scale.
                 </p>
               </div>
             </motion.div>
