@@ -7,7 +7,7 @@ const Skills: React.FC = () => {
     {
       title: 'AI / ML / GenAI',
       icon: Cpu,
-      skills: ['PyTorch', 'Transformers', 'SentenceTransformers', 'NLP', 'LLM Applications', 'RAG', 'ChromaDB', 'Groq API'],
+      skills: ['PyTorch', 'Transformers', 'SentenceTransformers', 'NLP', 'LLM Applications', 'RAG', 'ChromaDB', 'LangChain', 'Groq API'],
       color: 'orange',
       glow: 'hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] hover:border-orange-500/30',
       iconBg: 'bg-orange-50 dark:bg-orange-950/20 text-orange-600 dark:text-orange-400',
@@ -16,7 +16,7 @@ const Skills: React.FC = () => {
     {
       title: 'Backend',
       icon: Wrench,
-      skills: ['Python', 'FastAPI', 'Flask', 'REST APIs', 'JWT Authentication', 'SQL'],
+      skills: ['Python', 'FastAPI', 'Flask', 'REST APIs', 'JWT Authentication'],
       color: 'teal',
       glow: 'hover:shadow-[0_0_30px_rgba(20,184,166,0.15)] hover:border-teal-500/30',
       iconBg: 'bg-teal-50 dark:bg-teal-950/20 text-teal-600 dark:text-teal-400',
@@ -120,42 +120,7 @@ const Skills: React.FC = () => {
               </motion.div>
             );
           })}
-        </motion.div>
-
-        {/* Additional Skills */}
-        <div className="mt-20 text-center">
-          <motion.div
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            <h3 className="text-xl font-bold text-zinc-900 dark:text-white mb-6 font-display">
-              Additional Competencies
-            </h3>
-            <div className="flex flex-wrap justify-center gap-2 max-w-4xl mx-auto">
-              {[
-                'Data Structures & Algorithms',
-                'LangChain',
-                'RAG',
-                'LLM App Development',
-                'AI System Design',
-                'JWT Auth',
-                'Docker',
-                'Render',
-                'Vercel',
-              ].map((skill) => (
-                <span
-                  key={skill}
-                  className="px-4 py-2.5 bg-white dark:bg-zinc-900/35 border border-zinc-200/50 dark:border-zinc-800/50 rounded-2xl text-zinc-700 dark:text-zinc-300 text-xs font-bold font-sans uppercase tracking-wider hover:bg-indigo-50 dark:hover:bg-indigo-950/20 hover:border-indigo-500/20 hover:text-indigo-600 dark:hover:text-indigo-400 transition-all duration-300 cursor-default"
-                >
-                  {skill}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        </div>
-      </div>
+        </motion.div>      </div>
     </section>
   );
 };

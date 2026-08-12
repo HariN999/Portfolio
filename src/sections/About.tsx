@@ -60,10 +60,10 @@ const About: React.FC = () => {
               className="prose prose-lg dark:prose-invert"
             >
               <p className="text-zinc-600 dark:text-zinc-300 leading-relaxed text-lg font-normal font-sans">
-                I'm a Computer Science graduate focused on building AI-powered applications, NLP workflows, FastAPI services, LLM pipelines, and scalable backend systems. I enjoy turning research ideas and machine learning concepts into production-ready software systems with clean, modular architectures.
+                I'm a Computer Science graduate focused on building AI-powered applications, NLP workflows, FastAPI services, LLM pipelines, and backend systems. I enjoy turning research ideas and machine learning concepts into deployable software systems with clean, modular architectures.
               </p>
             </motion.div>
-
+ 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -79,10 +79,10 @@ const About: React.FC = () => {
                   <h3 className="font-bold text-zinc-900 dark:text-white font-display text-base">Engineering Focus</h3>
                 </div>
                 <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed font-sans">
-                  Designing robust backend services with FastAPI, implementing semantic search indices, integrating generative AI/LLM components, and managing production deployments.
+                  Designing robust backend services with FastAPI, implementing semantic search indices, integrating generative AI/LLM components, and managing containerized/cloud deployments.
                 </p>
               </div>
-
+ 
               <div className="bg-white/40 dark:bg-zinc-900/25 backdrop-blur-sm p-6 rounded-2xl border border-zinc-200/50 dark:border-zinc-800/50 hover:border-indigo-500/30 transition-colors">
                 <div className="flex items-center gap-3 mb-3">
                   <div className="p-2.5 rounded-xl bg-indigo-50 dark:bg-indigo-900/20 text-indigo-600 dark:text-indigo-400">
@@ -91,7 +91,7 @@ const About: React.FC = () => {
                   <h3 className="font-bold text-zinc-900 dark:text-white font-display text-base">Target Role</h3>
                 </div>
                 <p className="text-zinc-600 dark:text-zinc-400 text-sm leading-relaxed font-sans">
-                  AI Engineer, Backend Engineer, or Software Engineer roles focused on AI-powered products and backend systems. Focus area: NLP workflows, agentic AI logic, and robust microservices at scale.
+                  AI Engineer, Backend Engineer, or Software Engineer roles focused on NLP workflows, LLM applications, RAG, agentic AI, and FastAPI/backend services.
                 </p>
               </div>
             </motion.div>

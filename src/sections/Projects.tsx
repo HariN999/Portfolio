@@ -18,7 +18,7 @@ const Projects: React.FC = () => {
     {
       title: 'Saaram — AI-Powered Telugu News Summarization & Speech Platform',
       duration: 'Jan – Apr 2026',
-      description: 'Built a production-deployed hybrid news summarization platform that combines morphology-aware TF-IDF, mT5 base transformer model, and QLoRA fine-tuning. Implemented an adaptive routing engine that dynamically matches articles to optimal inference paths based on complexity and hardware limits, resource-aware fallback mechanisms, and Telugu text-to-speech feedback.',
+      description: 'Built a production-deployed hybrid Telugu NLP news summarization platform combining morphology-aware TF-IDF, mT5 transformer models, and QLoRA fine-tuning. Implemented an adaptive routing engine matching articles to optimal inference paths, resource-aware fallbacks, neural text-to-speech, and rigorous evaluation/benchmarking on the XL-Sum dataset.',
       technologies: ['FastAPI', 'React', 'Python', 'Transformers', 'Hugging Face Spaces', 'Vercel', 'Docker'],
       github: 'https://github.com/HariN999/Automated-Telugu-Text-Summarization-and-Speech-Generation-using-NLP.git',
       demo: 'https://saaram-nlp.vercel.app/',
@@ -27,8 +27,8 @@ const Projects: React.FC = () => {
     {
       title: 'ResearchCompass — AI Research Paper Analyzer',
       duration: 'Personal Project',
-      description: 'Engineered an AI-powered document intelligence service that extracts text from multi-page PDF papers using PyMuPDF and runs a Retrieval-Augmented Generation (RAG) pipeline to generate structured critiques and readiness scorecards. Utilizes SentenceTransformers for vector search, ChromaDB for indexing document chunks, and Groq/Llama 3.3 for structured AI analysis.',
-      technologies: ['Next.js', 'FastAPI', 'Python', 'Groq (Llama-3.3)', 'ChromaDB', 'PyMuPDF', 'Docker'],
+      description: 'Engineered a document intelligence service extracting text from multi-page PDF papers via PyMuPDF to run a semantic retrieval and RAG pipeline. Features SentenceTransformers vector search, ChromaDB indexing, and Groq/Llama for structured critiques and readiness scoring, exposed via FastAPI.',
+      technologies: ['Next.js', 'FastAPI', 'Python', 'Groq (Llama-3.3)', 'ChromaDB', 'PyMuPDF', 'Docker', 'TypeScript', 'TailwindCSS'],
       github: 'https://github.com/HariN999/ResearchCompass',
       demo: 'https://research-compass-gray.vercel.app/',
       status: 'deployed'
@@ -42,6 +42,14 @@ const Projects: React.FC = () => {
       status: 'completed'
     },
     {
+      title: 'Season-Spot — India-Focused Seasonal Travel Guide & AI Planner',
+      duration: 'Personal Project',
+      description: 'Engineered a seasonal travel guide and itinerary planner using FastAPI, Pydantic validation, and a validated JSON knowledge base. Integrates a Gemini API itinerary generation pipeline with structured outputs, regex-based JSON extraction, TTL caching, and a deterministic local fallback system.',
+      technologies: ['FastAPI', 'React', 'Gemini API', 'Pydantic', 'Material UI', 'Vercel', 'Python'],
+      github: 'https://github.com/HariN999/Season-Spot.git',
+      status: 'completed'
+    },
+    {
       title: 'Smart-FAQ — Semantic Search Engine',
       duration: 'Personal Project',
       description: 'Designed a semantic search system that contextually maps natural language queries to database resources. Implemented a FastAPI service that converts text questions to vector embeddings using SentenceTransformers, query matches using cosine similarity, and interfaces with a MongoDB database for document retrieval, protected by JWT admin authentication.',
@@ -50,19 +58,27 @@ const Projects: React.FC = () => {
       status: 'completed'
     },
     {
-      title: 'SocialeX — Real-Time Social Media Application',
-      duration: 'May – Jul 2024',
-      description: 'Built a full-stack real-time social platform featuring live 1-on-1 private messaging, post creation, and 24-hour stories. Engineered an Express/Node.js backend with Socket.io for WebSocket communication, Firebase Storage for rich media hosting, and JWT-authenticated routes for user profiles and feeds.',
-      technologies: ['React', 'Node.js', 'Express.js', 'Socket.io', 'MongoDB', 'Firebase'],
+      title: 'SocialeX — Text-First Social Network',
+      duration: 'Jun 2025, Aug 2026',
+      description: 'Built a full-stack text-first social network combining React, Node.js, and MongoDB. Features authenticated social interactions, user search, profile curation, and real-time 1-on-1 messaging via Socket.IO. Enforces strict server-side authorization boundaries, where user identity is derived from verified JWT handshakes to protect chat access and post deletion.',
+      technologies: ['React', 'Node.js', 'Express.js', 'Socket.io', 'MongoDB', 'JWT Auth', 'CSS'],
       github: 'https://github.com/HariN999/SocialeX.git',
       status: 'completed'
     },
     {
       title: 'AgroAid — AI-Based Crop Disease Classifier',
       duration: 'Jan – Mar 2025',
-      description: 'Developed a computer vision crop diagnostics service that processes plant imagery to classify disease across 39 distinct crop categories. Built using a fine-tuned PyTorch Convolutional Neural Network (CNN) with a Flask interface and integrated translation API services for multilingual suggestions.',
-      technologies: ['Python', 'PyTorch', 'CNNs', 'Flask', 'APIs'],
+      description: 'Developed a computer vision diagnostics and agricultural decision-support system classifying 39 crop disease categories. Implemented image validation, model uncertainty visualization, and vendor-neutral active ingredient mapping using PyTorch and Flask.',
+      technologies: ['Python', 'PyTorch', 'CNNs', 'Flask', 'Pandas', 'pytest'],
       github: 'https://github.com/HariN999/AgroAid',
+      status: 'completed'
+    },
+    {
+      title: 'HelmetDetection — YOLOv3 Helmet Detection System',
+      duration: 'Personal Project',
+      description: 'Developed a safety detection system using YOLOv3 and OpenCV to detect helmets in real-time. Features a lightweight Flask web interface for uploading images and displaying annotated bounding-box outputs.',
+      technologies: ['Python', 'OpenCV', 'Flask', 'YOLOv3'],
+      github: 'https://github.com/HariN999/HelmetDetection.git',
       status: 'completed'
     }
   ];
@@ -99,7 +115,7 @@ const Projects: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
           {projects.map((project, index) => {
-            const isFlagship = index === 0 || index === 1 || index === 2;
+            const isFlagship = index === 0 || index === 1 || index === 2 || index === 3;
             return (
               <motion.div
                 key={index}
@@ -117,7 +133,13 @@ const Projects: React.FC = () => {
                   {isFlagship && (
                     <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-blue-500/10 to-indigo-500/10 dark:from-blue-500/20 dark:to-indigo-500/20 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200/20 dark:border-blue-800/20">
                       <Star size={12} className="fill-current" />
-                      {index === 0 ? 'Featured · Capstone' : index === 1 ? 'Featured · RAG / Document AI' : 'Featured · Audio AI'}
+                      {index === 0 
+                        ? 'Featured · Capstone' 
+                        : index === 1 
+                        ? 'Featured · RAG / Document AI' 
+                        : index === 2 
+                        ? 'Featured · Audio AI' 
+                        : 'Featured · AI Travel Planner'}
                     </div>
                   )}
 

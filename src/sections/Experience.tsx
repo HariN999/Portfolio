@@ -23,7 +23,7 @@ const Experience: React.FC = () => {
       type: 'internship',
       title: 'Full Stack Development (MERN Stack)',
       institution: 'SmartInternz (Virtual Internship)',
-      duration: 'May 2024 – July 2024',
+      duration: 'May – Jul 2025',
       status: 'Completed',
       details: [
         'Built SocialeX, a MERN-based social platform with JWT auth, REST endpoints, and MongoDB.',
