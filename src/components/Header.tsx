@@ -29,7 +29,7 @@ const Header: React.FC = () => {
       { threshold: 0, rootMargin: '-25% 0px -45% 0px' }
     );
 
-    ['home', 'about', 'skills', 'projects', 'experience', 'contact'].forEach((id) => {
+    ['home', 'about', 'skills', 'projects', 'experience', 'certifications', 'contact'].forEach((id) => {
       const section = document.getElementById(id);
       if (section) {
         observer.observe(section);
@@ -54,6 +54,7 @@ const Header: React.FC = () => {
     { id: 'skills', label: 'Skills' },
     { id: 'projects', label: 'Projects' },
     { id: 'experience', label: 'Experience' },
+    { id: 'certifications', label: 'Certifications' },
     { id: 'contact', label: 'Contact' },
   ];
 
