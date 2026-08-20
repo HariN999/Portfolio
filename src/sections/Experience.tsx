@@ -38,7 +38,7 @@ const Experience: React.FC = () => {
   ];
 
   return (
-    <section id="experience" className="py-24 bg-zinc-50 dark:bg-zinc-900/20 transition-colors duration-300 relative overflow-hidden">
+    <section id="experience" className="py-24 transition-colors duration-300 relative overflow-hidden scroll-mt-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <motion.div
@@ -54,115 +54,110 @@ const Experience: React.FC = () => {
           </motion.div>
         </div>
 
-        <div className="relative max-w-5xl mx-auto">
-          {/* Vertical central timeline line */}
-          <div className="absolute left-4 md:left-1/2 top-0 bottom-0 w-0.5 bg-zinc-200 dark:bg-zinc-800 -translate-x-1/2" />
+        <div className="relative max-w-4xl mx-auto pl-6 sm:pl-8">
+          {/* Vertical left timeline line */}
+          <div className="absolute left-1 sm:left-2.5 top-0 bottom-0 w-0.5 bg-zinc-200 dark:bg-zinc-800/60" />
 
-          <div className="space-y-16">
+          <div className="space-y-12">
             {timelineData.map((item, index) => {
               const Icon = item.icon;
-              const isEven = index % 2 === 0;
               
               return (
-                <div key={index} className="relative flex flex-col md:flex-row items-stretch">
-                  {/* Timeline Node Point on Center Line */}
-                  <div className="absolute left-4 md:left-1/2 -translate-x-1/2 top-4 z-10">
+                <div key={index} className="relative w-full">
+                  {/* Timeline Node Point */}
+                  <div className="absolute -left-[27px] sm:-left-[31px] top-1 z-10">
                     <motion.div
                       initial={{ scale: 0 }}
                       whileInView={{ scale: 1 }}
                       viewport={{ once: true }}
                       transition={{ duration: 0.4, delay: index * 0.1 }}
-                      className={`w-9 h-9 rounded-full bg-white dark:bg-zinc-950 border-2 flex items-center justify-center shadow-md ${
+                      className={`w-8 h-8 rounded-full bg-white dark:bg-zinc-950 border-2 flex items-center justify-center shadow-sm ${
                         item.color === 'blue' 
                           ? 'border-blue-500 text-blue-500' 
                           : 'border-emerald-500 text-emerald-500'
                       }`}
                     >
-                      <Icon size={16} />
+                      <Icon size={14} />
                     </motion.div>
                   </div>
 
-                  {/* Left / Right Card Container */}
-                  <div className={`w-full md:w-[calc(50%-2rem)] ${
-                    isEven ? 'md:mr-auto pl-12 md:pl-0 md:pr-4 text-left' : 'md:ml-auto pl-12 md:pl-8 text-left'
-                  }`}>
-                    <motion.div
-                      initial={{ opacity: 0, x: isEven ? -40 : 40 }}
-                      whileInView={{ opacity: 1, x: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.6 }}
-                      className="bg-white/45 dark:bg-zinc-900/25 border border-zinc-200/50 dark:border-zinc-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-2xl shadow-md hover:border-blue-500/25 hover:shadow-lg transition-all duration-300"
-                    >
-                      <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
-                        <span className={`px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider rounded-full border ${
-                          item.color === 'blue'
-                            ? 'bg-blue-50/50 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400 border-blue-200/30'
-                            : 'bg-emerald-50/50 dark:bg-emerald-950/20 text-emerald-600 dark:text-emerald-400 border-emerald-200/30'
-                        }`}>
-                          {item.status}
-                        </span>
-                        
-                        <div className="flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-500">
-                          <Calendar size={13} />
-                          {item.duration}
-                        </div>
-                      </div>
-
-                      <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white mb-1 font-display tracking-tight leading-tight">
-                        {item.title}
-                      </h3>
+                  {/* Card Content spanning available width */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5 }}
+                    className="bg-white dark:bg-zinc-900/15 border border-zinc-200/50 dark:border-zinc-800/40 p-6 sm:p-8 rounded-lg hover:border-blue-500/20 hover:shadow-sm transition-all duration-300 w-full animate-none"
+                  >
+                    <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+                      <span className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-widest border inline-flex items-center leading-none h-fit ${
+                        item.color === 'blue'
+                          ? 'bg-blue-50/50 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400 border-blue-200/30'
+                          : 'bg-emerald-50/50 dark:bg-emerald-950/20 text-emerald-600 dark:text-emerald-400 border-emerald-200/30'
+                      }`}>
+                        {item.status}
+                      </span>
                       
-                      <div className="flex items-center gap-1.5 text-sm font-semibold text-zinc-500 dark:text-zinc-400 mb-6">
-                        <MapPin size={14} />
-                        {item.institution}
+                      <div className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+                        <Calendar size={12} />
+                        {item.duration}
                       </div>
+                    </div>
 
-                      <div className="space-y-4 mb-6">
-                        {item.details.map((detail, idx) => (
-                          <div key={idx} className="flex items-start gap-2.5 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans">
-                            <div className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${
-                              item.color === 'blue' ? 'bg-blue-500' : 'bg-emerald-500'
-                            }`} />
-                            <p>{detail}</p>
-                          </div>
-                        ))}
+                    <h3 className="text-lg sm:text-xl font-bold text-zinc-900 dark:text-white mb-1.5 font-display tracking-tight leading-snug">
+                      {item.title}
+                    </h3>
+                    
+                    <div className="flex items-center gap-1.5 text-xs font-semibold text-zinc-500 dark:text-zinc-400 mb-5">
+                      <MapPin size={14} />
+                      {item.institution}
+                    </div>
+
+                    <div className="space-y-3 mb-6">
+                      {item.details.map((detail, idx) => (
+                        <div key={idx} className="flex items-start gap-2.5 text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans">
+                          <div className={`w-1.5 h-1.5 rounded-full mt-2 flex-shrink-0 ${
+                            item.color === 'blue' ? 'bg-blue-500' : 'bg-emerald-500'
+                          }`} />
+                          <p>{detail}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    {item.coursework && (
+                      <div>
+                        <h4 className="font-bold text-zinc-800 dark:text-zinc-300 text-[10px] uppercase tracking-wider mb-2 font-display">Relevant Coursework / Focus:</h4>
+                        <div className="flex flex-wrap gap-1.5">
+                          {item.coursework.map((course) => (
+                            <span
+                              key={course}
+                              className={`px-2 py-0.5 text-[10px] font-semibold rounded border ${
+                                item.color === 'blue'
+                                  ? 'bg-blue-50/40 dark:bg-blue-950/10 border-blue-200/20 dark:border-blue-900/10 text-blue-700 dark:text-blue-300'
+                                  : 'bg-emerald-50/40 dark:bg-emerald-950/10 border-emerald-200/20 dark:border-emerald-900/10 text-emerald-700 dark:text-emerald-300'
+                              }`}
+                            >
+                              {course}
+                            </span>
+                          ))}
+                        </div>
                       </div>
+                    )}
 
-                      {item.coursework && (
-                        <div>
-                          <h4 className="font-bold text-zinc-900 dark:text-white text-xs uppercase tracking-wider mb-3 font-display">Relevant Coursework:</h4>
-                          <div className="flex flex-wrap gap-1.5">
-                            {item.coursework.map((course) => (
-                              <span
-                                key={course}
-                                className={`px-2.5 py-1 text-[11px] font-bold rounded-lg border ${
-                                  item.color === 'blue'
-                                    ? 'bg-blue-50/50 dark:bg-blue-950/10 border-blue-200/20 dark:border-blue-900/10 text-blue-700 dark:text-blue-300'
-                                    : 'bg-emerald-50/50 dark:bg-emerald-950/10 border-emerald-200/20 dark:border-emerald-900/10 text-emerald-700 dark:text-emerald-300'
-                                }`}
-                              >
-                                {course}
-                              </span>
-                            ))}
-                          </div>
-                        </div>
-                      )}
-
-                      {item.certificate && (
-                        <div className="mt-6">
-                          <a
-                            href={item.certificate}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-md shadow-blue-500/10 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300"
-                          >
-                            View Certificate
-                            <ExternalLink size={13} />
-                          </a>
-                        </div>
-                      )}
-                    </motion.div>
-                  </div>
+                    {item.certificate && (
+                      <div className="mt-6 border-t border-zinc-150/10 dark:border-zinc-800/20 pt-4">
+                        <a
+                          href={item.certificate}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold uppercase tracking-wider rounded hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 shadow-sm"
+                        >
+                          View Certificate
+                          <ExternalLink size={12} />
+                        </a>
+                      </div>
+                    )}
+                  </motion.div>
                 </div>
               );
             })}

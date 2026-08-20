@@ -14,7 +14,7 @@ import ScrollToTop from './components/ScrollToTop';
 function App() {
   return (
     <ThemeProvider>
-      <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors duration-300">
+      <div className="min-h-screen bg-zinc-50 dark:bg-zinc-950 transition-colors duration-300">
         <Header />
         <main>
           <Hero />

@@ -106,7 +106,7 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-white dark:bg-zinc-950 transition-colors duration-300 relative">
+    <section id="contact" className="py-24 transition-colors duration-300 relative scroll-mt-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.div
@@ -153,13 +153,13 @@ const Contact: React.FC = () => {
                       href={item.link}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-4 p-5 bg-white/45 dark:bg-zinc-900/20 backdrop-blur-sm border border-zinc-200/50 dark:border-zinc-800/50 rounded-2xl hover:border-blue-500/25 hover:shadow-lg transition-all duration-300 group"
+                      className="flex items-center gap-4 p-4 bg-white dark:bg-zinc-900/15 border border-zinc-200/50 dark:border-zinc-800/40 rounded-lg hover:border-blue-500/20 hover:shadow-sm transition-all duration-300 group"
                     >
-                      <div className={`p-3 rounded-xl border ${item.iconBg} group-hover:scale-105 transition-transform`}>
-                        <IconComponent size={20} className={item.color} />
+                      <div className={`p-2.5 rounded-lg border ${item.iconBg} group-hover:scale-105 transition-transform flex-shrink-0`}>
+                        <IconComponent size={18} className={item.color} />
                       </div>
                       <div>
-                        <h4 className="font-bold text-zinc-500 dark:text-zinc-500 text-[10px] uppercase tracking-wider mb-0.5 font-display">
+                        <h4 className="font-bold text-zinc-550 dark:text-zinc-500 text-[9px] uppercase tracking-wider mb-0.5 font-display">
                           {item.label}
                         </h4>
                         <p className="text-zinc-800 dark:text-zinc-200 font-sans text-sm font-semibold">
@@ -179,9 +179,9 @@ const Contact: React.FC = () => {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="bg-white/45 dark:bg-zinc-900/20 backdrop-blur-sm border border-zinc-200/50 dark:border-zinc-800/50 rounded-3xl p-6 sm:p-8 flex flex-col justify-center"
+            className="bg-white dark:bg-zinc-900/15 border border-zinc-200/50 dark:border-zinc-800/40 rounded-lg p-6 sm:p-8 flex flex-col justify-center"
           >
-            <h3 className="text-2xl font-bold text-zinc-900 dark:text-white mb-6 font-display tracking-tight">
+            <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white mb-6 font-display tracking-tight leading-none">
               Send a Message
             </h3>
 
@@ -190,18 +190,18 @@ const Contact: React.FC = () => {
                 <div className="inline-flex p-4 bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-200/30 rounded-full">
                   <CheckCircle size={44} className="text-emerald-600 dark:text-emerald-400" />
                 </div>
-                <h4 className="text-xl font-bold text-zinc-900 dark:text-white font-display tracking-tight">
+                <h4 className="text-lg font-bold text-zinc-900 dark:text-white font-display tracking-tight">
                   Email Client Opened!
                 </h4>
-                <p className="text-zinc-600 dark:text-zinc-400 font-sans text-sm leading-relaxed max-w-sm mx-auto">
+                <p className="text-zinc-650 dark:text-zinc-400 font-sans text-sm leading-relaxed max-w-sm mx-auto">
                   Your email client has been opened with a pre-filled message. Please hit Send to complete your message.
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label htmlFor="name" className="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-500 mb-2 font-display">
+                    <label htmlFor="name" className="block text-[10px] font-bold uppercase tracking-wider text-zinc-550 dark:text-zinc-500 mb-2 font-display">
                       Name *
                     </label>
                     <input
@@ -211,16 +211,16 @@ const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       aria-label="Full Name"
-                      className={`w-full px-4 py-3 text-sm border rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white ${
-                        errors.name ? 'border-red-500' : 'border-zinc-200/50 dark:border-zinc-800/50'
+                      className={`w-full px-3.5 py-2.5 text-sm border rounded focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white ${
+                        errors.name ? 'border-red-500' : 'border-zinc-200/50 dark:border-zinc-800/40'
                       }`}
                       placeholder="Your name"
                     />
-                    {errors.name && <p className="mt-1 text-xs text-red-600 dark:text-red-400">{errors.name}</p>}
+                    {errors.name && <p className="mt-1 text-xs text-red-650 dark:text-red-400">{errors.name}</p>}
                   </div>
 
                   <div>
-                    <label htmlFor="email" className="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-500 mb-2 font-display">
+                    <label htmlFor="email" className="block text-[10px] font-bold uppercase tracking-wider text-zinc-555 dark:text-zinc-500 mb-2 font-display">
                       Email *
                     </label>
                     <input
@@ -230,17 +230,17 @@ const Contact: React.FC = () => {
                       value={formData.email}
                       onChange={handleChange}
                       aria-label="Email Address"
-                      className={`w-full px-4 py-3 text-sm border rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white ${
-                        errors.email ? 'border-red-500' : 'border-zinc-200/50 dark:border-zinc-800/50'
+                      className={`w-full px-3.5 py-2.5 text-sm border rounded focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white ${
+                        errors.email ? 'border-red-500' : 'border-zinc-200/50 dark:border-zinc-800/40'
                       }`}
                       placeholder="your.email@example.com"
                     />
-                    {errors.email && <p className="mt-1 text-xs text-red-600 dark:text-red-400">{errors.email}</p>}
+                    {errors.email && <p className="mt-1 text-xs text-red-655 dark:text-red-400">{errors.email}</p>}
                   </div>
                 </div>
 
                 <div>
-                  <label htmlFor="subject" className="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-500 mb-2 font-display">
+                  <label htmlFor="subject" className="block text-[10px] font-bold uppercase tracking-wider text-zinc-555 dark:text-zinc-500 mb-2 font-display">
                     Subject *
                   </label>
                   <input
@@ -250,16 +250,16 @@ const Contact: React.FC = () => {
                     value={formData.subject}
                     onChange={handleChange}
                     aria-label="Subject"
-                    className={`w-full px-4 py-3 text-sm border rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white ${
-                      errors.subject ? 'border-red-500' : 'border-zinc-200/50 dark:border-zinc-800/50'
+                    className={`w-full px-3.5 py-2.5 text-sm border rounded focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white ${
+                      errors.subject ? 'border-red-500' : 'border-zinc-200/50 dark:border-zinc-800/40'
                     }`}
                     placeholder="What's this about?"
                   />
-                  {errors.subject && <p className="mt-1 text-xs text-red-600 dark:text-red-400">{errors.subject}</p>}
+                  {errors.subject && <p className="mt-1 text-xs text-red-655 dark:text-red-400">{errors.subject}</p>}
                 </div>
 
                 <div>
-                  <label htmlFor="message" className="block text-xs font-bold uppercase tracking-wider text-zinc-500 dark:text-zinc-500 mb-2 font-display">
+                  <label htmlFor="message" className="block text-[10px] font-bold uppercase tracking-wider text-zinc-555 dark:text-zinc-500 mb-2 font-display">
                     Message *
                   </label>
                   <textarea
@@ -269,27 +269,27 @@ const Contact: React.FC = () => {
                     value={formData.message}
                     onChange={handleChange}
                     aria-label="Message"
-                    className={`w-full px-4 py-3 text-sm border rounded-xl focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 resize-none bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white ${
-                      errors.message ? 'border-red-500' : 'border-zinc-200/50 dark:border-zinc-800/50'
+                    className={`w-full px-3.5 py-2.5 text-sm border rounded focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 transition-all duration-300 resize-none bg-white dark:bg-zinc-950 text-zinc-900 dark:text-white ${
+                      errors.message ? 'border-red-500' : 'border-zinc-200/50 dark:border-zinc-800/40'
                     }`}
                     placeholder="Tell me more about your message..."
                   ></textarea>
-                  {errors.message && <p className="mt-1 text-xs text-red-600 dark:text-red-400">{errors.message}</p>}
+                  {errors.message && <p className="mt-1 text-xs text-red-655 dark:text-red-400">{errors.message}</p>}
                 </div>
 
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full px-6 py-4 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold uppercase tracking-wider rounded-full shadow-lg shadow-blue-500/10 hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-5 py-3 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold uppercase tracking-wider rounded hover:scale-[1.01] active:scale-[0.99] transition-all duration-300 flex items-center justify-center gap-1.5 disabled:opacity-50 disabled:cursor-not-allowed shadow-sm"
                 >
                   {isSubmitting ? (
                     <>
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-white"></div>
+                      <div className="animate-spin rounded-full h-3.5 w-3.5 border-b-2 border-white flex-shrink-0"></div>
                       Opening Email Client...
                     </>
                   ) : (
                     <>
-                      <Send size={14} />
+                      <Send size={12} className="flex-shrink-0" />
                       Send Message
                     </>
                   )}

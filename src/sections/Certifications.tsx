@@ -61,7 +61,7 @@ const Certifications: React.FC = () => {
   ];
 
   return (
-    <section id="certifications" className="py-24 bg-slate-50 dark:bg-[#0B0F17] border-b border-slate-100 dark:border-slate-900 transition-colors duration-300 relative">
+    <section id="certifications" className="py-24 transition-colors duration-300 relative scroll-mt-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.div
@@ -70,19 +70,19 @@ const Certifications: React.FC = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight font-display">
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-zinc-900 dark:text-white mb-4 tracking-tight font-display">
               Certifications & Credentials
             </h2>
             <div className="w-12 h-1 bg-blue-600 dark:bg-blue-500 mx-auto rounded-full mb-6"></div>
-            <p className="text-sm sm:text-base text-slate-600 dark:text-slate-400 max-w-2xl mx-auto font-sans leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-650 dark:text-zinc-400 max-w-2xl mx-auto font-sans leading-relaxed">
               Curated professional credentials and verified technical achievements supporting my software and AI engineering workflow.
             </p>
           </motion.div>
         </div>
 
         {/* Credentials List Container */}
-        <div className="max-w-3xl mx-auto border-t border-slate-200 dark:border-slate-800/85">
-          <div className="divide-y divide-slate-200 dark:divide-slate-800/80">
+        <div className="max-w-3xl mx-auto border-t border-zinc-250/60 dark:border-zinc-800/40">
+          <div className="divide-y divide-zinc-200 dark:divide-zinc-800/40">
             {certificationsData.map((item, index) => (
               <motion.div
                 key={item.title + index}
@@ -90,10 +90,10 @@ const Certifications: React.FC = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: index * 0.05 }}
-                className="py-5 border-b border-slate-200 dark:border-slate-800/80"
+                className="py-5 border-b border-zinc-250/60 dark:border-zinc-800/40"
               >
                 <div className="space-y-1">
-                  <h3 className="text-sm sm:text-base font-bold text-slate-900 dark:text-white tracking-tight flex items-center gap-1.5">
+                  <h3 className="text-sm sm:text-base font-bold text-zinc-900 dark:text-white tracking-tight flex items-center gap-1.5">
                     {item.link ? (
                       <a
                         href={item.link}
@@ -108,8 +108,8 @@ const Certifications: React.FC = () => {
                       item.title
                     )}
                   </h3>
-                  <p className="text-xs text-slate-500 dark:text-slate-400 font-sans leading-none">
-                    {item.issuer} <span className="text-slate-300 dark:text-slate-700 mx-1.5 select-none">•</span> {item.date}
+                  <p className="text-xs text-zinc-500 dark:text-zinc-400 font-sans leading-none">
+                    {item.issuer} <span className="text-zinc-300 dark:text-zinc-700 mx-1.5 select-none">•</span> {item.date}
                   </p>
                 </div>
               </motion.div>

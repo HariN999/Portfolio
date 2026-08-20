@@ -47,7 +47,8 @@ const Projects: React.FC = () => {
       description: 'Engineered a seasonal travel guide and itinerary planner using FastAPI, Pydantic validation, and a validated JSON knowledge base. Integrates a Gemini API itinerary generation pipeline with structured outputs, regex-based JSON extraction, TTL caching, and a deterministic local fallback system.',
       technologies: ['FastAPI', 'React', 'Gemini API', 'Pydantic', 'Material UI', 'Vercel', 'Python'],
       github: 'https://github.com/HariN999/Season-Spot.git',
-      status: 'completed'
+      demo: 'https://season-spot.vercel.app/',
+      status: 'deployed'
     },
     {
       title: 'Smart-FAQ — Semantic Search Engine',
@@ -87,14 +88,14 @@ const Projects: React.FC = () => {
     switch (status) {
       case 'completed':
       case 'deployed':
-        return 'bg-emerald-50 dark:bg-emerald-950/20 text-emerald-700 dark:text-emerald-400 border-emerald-200/50 dark:border-emerald-900/30';
+        return 'bg-emerald-50/50 dark:bg-emerald-950/10 text-emerald-700 dark:text-emerald-400 border-emerald-200/30 dark:border-emerald-900/20';
       default:
-        return 'bg-zinc-50 dark:bg-zinc-900/30 text-zinc-600 dark:text-zinc-400 border-zinc-200/50 dark:border-zinc-800/30';
+        return 'bg-zinc-50 dark:bg-zinc-900/30 text-zinc-600 dark:text-zinc-400 border-zinc-200/40 dark:border-zinc-800/20';
     }
   };
 
   return (
-    <section id="projects" className="py-24 bg-white dark:bg-zinc-950 transition-colors duration-300 relative">
+    <section id="projects" className="py-24 transition-colors duration-300 relative scroll-mt-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
           <motion.div
@@ -107,32 +108,32 @@ const Projects: React.FC = () => {
               Featured Projects
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-indigo-600 dark:from-blue-400 dark:to-indigo-400 mx-auto rounded-full mb-6"></div>
-            <p className="text-base text-zinc-600 dark:text-zinc-400 max-w-2xl mx-auto font-sans leading-relaxed">
+            <p className="text-sm sm:text-base text-zinc-650 dark:text-zinc-400 max-w-2xl mx-auto font-sans leading-relaxed">
               Engineering core services, machine learning APIs, semantic search engines, and real-time backend systems.
             </p>
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-7xl mx-auto items-stretch">
           {projects.map((project, index) => {
             const isFlagship = index === 0 || index === 1 || index === 2 || index === 3;
             return (
               <motion.div
                 key={index}
-                initial={{ opacity: 0, y: 40 }}
+                initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-5%' }}
                 transition={{ duration: 0.6, delay: index * 0.05 }}
-                className={`bg-white/45 dark:bg-zinc-900/20 backdrop-blur-sm rounded-2xl border overflow-hidden flex flex-col justify-between transition-all duration-300 ${
+                className={`bg-white dark:bg-zinc-900/15 rounded-lg border overflow-hidden flex flex-col justify-between transition-all duration-300 ${
                   isFlagship 
-                    ? 'border-blue-500/30 dark:border-blue-500/20 shadow-[0_0_20px_rgba(59,130,246,0.04)] dark:shadow-[0_0_20px_rgba(59,130,246,0.06)] hover:border-blue-500/50 hover:shadow-[0_0_30px_rgba(59,130,246,0.1)]' 
-                    : 'border-zinc-200/50 dark:border-zinc-800/50 hover:border-indigo-500/30 hover:shadow-[0_0_30px_rgba(99,102,241,0.08)]'
+                    ? 'border-blue-500/20 dark:border-blue-500/20 hover:border-blue-500/40 hover:shadow-sm' 
+                    : 'border-zinc-200/60 dark:border-zinc-800/40 hover:border-blue-500/20 hover:shadow-sm'
                 }`}
               >
-                <div className="p-6 sm:p-8">
+                <div className="p-6 sm:p-8 flex-grow">
                   {isFlagship && (
-                    <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-gradient-to-r from-blue-500/10 to-indigo-500/10 dark:from-blue-500/20 dark:to-indigo-500/20 text-blue-600 dark:text-blue-400 text-xs font-bold uppercase tracking-wider mb-4 border border-blue-200/20 dark:border-blue-800/20">
-                      <Star size={12} className="fill-current" />
+                    <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-blue-50/50 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase tracking-wider mb-4 border border-blue-100/30 dark:border-blue-900/20">
+                      <Star size={10} className="fill-current flex-shrink-0" />
                       {index === 0 
                         ? 'Featured · Capstone' 
                         : index === 1 
@@ -143,23 +144,23 @@ const Projects: React.FC = () => {
                     </div>
                   )}
 
-                  <div className="flex items-start justify-between gap-4 mb-4">
+                  <div className="flex items-start justify-between gap-4 mb-3">
                     <div className="flex-1">
-                      <h3 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-white mb-2 font-display tracking-tight leading-tight">
+                      <h3 className="text-lg sm:text-xl font-bold text-zinc-900 dark:text-white mb-1.5 font-display tracking-tight leading-snug">
                         {project.title}
                       </h3>
-                      <div className="flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-zinc-500 dark:text-zinc-500 mb-2">
-                        <Calendar size={14} />
+                      <div className="flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider text-zinc-400 dark:text-zinc-500">
+                        <Calendar size={12} />
                         {project.duration}
                       </div>
                     </div>
-                    <span className={`px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider border flex items-center gap-1.5 ${getStatusColor(project.status)}`}>
-                      <span className="w-1.5 h-1.5 rounded-full bg-current" />
+                    <span className={`px-2 py-0.5 rounded text-[9px] font-bold uppercase tracking-widest border inline-flex items-center gap-1 flex-shrink-0 leading-none h-fit ${getStatusColor(project.status)}`}>
+                      <span className="w-1 h-1 rounded-full bg-current" />
                       {project.status}
                     </span>
                   </div>
 
-                  <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans mb-6 text-sm sm:text-base">
+                  <p className="text-zinc-600 dark:text-zinc-400 leading-relaxed font-sans mb-6 text-sm max-w-none">
                     {project.description}
                   </p>
 
@@ -168,7 +169,7 @@ const Projects: React.FC = () => {
                     {project.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-2.5 py-1 bg-zinc-100 dark:bg-zinc-800/40 border border-zinc-200/50 dark:border-zinc-800/30 text-zinc-700 dark:text-zinc-300 rounded-lg text-xs font-bold font-sans"
+                        className="px-2 py-0.5 bg-zinc-50 dark:bg-zinc-900/30 border border-zinc-200/40 dark:border-zinc-800/20 text-zinc-650 dark:text-zinc-400 rounded text-[10px] font-semibold"
                       >
                         {tech}
                       </span>
@@ -177,16 +178,16 @@ const Projects: React.FC = () => {
                 </div>
 
                 {/* Bottom/Actions Bar */}
-                <div className="p-4 sm:p-6 bg-zinc-50 dark:bg-zinc-900/30 border-t border-zinc-200/50 dark:border-zinc-800/50 flex items-center justify-between">
+                <div className="p-5 bg-zinc-50 dark:bg-zinc-900/20 border-t border-zinc-150/20 dark:border-zinc-800/30 flex items-center justify-between">
                   <div className="flex items-center gap-3">
                     {project.demo && (
                       <a
                         href={project.demo}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-md shadow-blue-500/10 hover:shadow-blue-500/20 hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 text-xs font-bold uppercase tracking-wider"
+                        className="flex items-center gap-1.5 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 text-xs font-bold uppercase tracking-wider shadow-sm"
                       >
-                        <ExternalLink size={14} />
+                        <ExternalLink size={12} />
                         Demo
                       </a>
                     )}
@@ -196,13 +197,13 @@ const Projects: React.FC = () => {
                           href={project.github}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center gap-2 px-5 py-2.5 bg-zinc-900 dark:bg-zinc-800 hover:bg-zinc-800 dark:hover:bg-zinc-700 text-white rounded-full hover:scale-[1.03] active:scale-[0.98] transition-all duration-300 text-xs font-bold uppercase tracking-wider border border-transparent"
+                          className="flex items-center gap-1.5 px-4 py-2 bg-zinc-900 dark:bg-zinc-805 hover:bg-zinc-800 dark:hover:bg-zinc-700 text-white rounded hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 text-xs font-bold uppercase tracking-wider border border-transparent"
                         >
-                          <Github size={14} />
+                          <Github size={12} />
                           GitHub
                         </a>
                         {project.note && (
-                          <span className="text-[10px] text-zinc-400 dark:text-zinc-500 italic pl-1">
+                          <span className="text-[9px] text-zinc-400 dark:text-zinc-500 italic pl-1">
                             {project.note}
                           </span>
                         )}
