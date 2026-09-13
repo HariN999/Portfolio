@@ -19,8 +19,8 @@ const Projects: React.FC = () => {
       title: 'Saaram — AI-Powered Telugu News Summarization & Speech Platform',
       duration: 'Jan – Apr 2026',
       description: 'Built a production-deployed hybrid Telugu NLP news summarization platform combining morphology-aware TF-IDF, mT5 transformer models, and QLoRA fine-tuning. Implemented an adaptive routing engine matching articles to optimal inference paths, resource-aware fallbacks, neural text-to-speech, and rigorous evaluation/benchmarking on the XL-Sum dataset.',
-      technologies: ['FastAPI', 'React', 'Python', 'Transformers', 'Hugging Face Spaces', 'Vercel', 'Docker'],
-      github: 'https://github.com/HariN999/Automated-Telugu-Text-Summarization-and-Speech-Generation-using-NLP.git',
+      technologies: ['FastAPI', 'React', 'Python', 'Transformers', 'Docker', 'GitHub Actions', 'Hugging Face Spaces', 'Vercel'],
+      github: 'https://github.com/HariN999/Saaram-telugu-summarizer',
       demo: 'https://saaram-nlp.vercel.app/',
       status: 'deployed'
     },
@@ -28,26 +28,9 @@ const Projects: React.FC = () => {
       title: 'ResearchCompass — AI Research Paper Analyzer',
       duration: 'Personal Project',
       description: 'Engineered a document intelligence service extracting text from multi-page PDF papers via PyMuPDF to run a semantic retrieval and RAG pipeline. Features SentenceTransformers vector search, ChromaDB indexing, and Groq/Llama for structured critiques and readiness scoring, exposed via FastAPI.',
-      technologies: ['Next.js', 'FastAPI', 'Python', 'Groq (Llama-3.3)', 'ChromaDB', 'PyMuPDF', 'Docker', 'TypeScript', 'TailwindCSS'],
+      technologies: ['Next.js', 'FastAPI', 'Python', 'Groq (Llama-3.3)', 'ChromaDB', 'PyMuPDF', 'Docker', 'GitHub Actions', 'TypeScript', 'TailwindCSS'],
       github: 'https://github.com/HariN999/ResearchCompass',
       demo: 'https://research-compass-gray.vercel.app/',
-      status: 'deployed'
-    },
-    {
-      title: 'VoiceVibes AI — Vocal Emotion Analytics Dashboard',
-      duration: 'Personal Project',
-      description: 'Developed an audio analytics dashboard that processes vocal waveforms directly from standard browser microphone inputs. Features a custom client-side WAV audio encoder delivering mono 16-bit PCM streams and a FastAPI backend running CPU inference via a fine-tuned Wav2Vec2 transformer to visualize real-time 7-class emotional probabilities.',
-      technologies: ['FastAPI', 'React', 'PyTorch', 'Wav2Vec2', 'Web Audio API', 'Docker'],
-      github: 'https://github.com/HariN999/VoiceVibes.git',
-      status: 'completed'
-    },
-    {
-      title: 'Season-Spot — India-Focused Seasonal Travel Guide & AI Planner',
-      duration: 'Personal Project',
-      description: 'Engineered a seasonal travel guide and itinerary planner using FastAPI, Pydantic validation, and a validated JSON knowledge base. Integrates a Gemini API itinerary generation pipeline with structured outputs, regex-based JSON extraction, TTL caching, and a deterministic local fallback system.',
-      technologies: ['FastAPI', 'React', 'Gemini API', 'Pydantic', 'Material UI', 'Vercel', 'Python'],
-      github: 'https://github.com/HariN999/Season-Spot.git',
-      demo: 'https://season-spot.vercel.app/',
       status: 'deployed'
     },
     {
@@ -59,11 +42,28 @@ const Projects: React.FC = () => {
       status: 'completed'
     },
     {
+      title: 'VoiceVibes AI — Vocal Emotion Analytics Dashboard',
+      duration: 'Personal Project',
+      description: 'Developed an audio analytics dashboard that processes vocal waveforms directly from standard browser microphone inputs. Features a custom client-side WAV audio encoder delivering mono 16-bit PCM streams and a FastAPI backend running CPU inference via a fine-tuned Wav2Vec2 transformer to visualize real-time 7-class emotional probabilities.',
+      technologies: ['FastAPI', 'React', 'PyTorch', 'Wav2Vec2', 'Web Audio API', 'Docker'],
+      github: 'https://github.com/HariN999/VoiceVibes',
+      status: 'completed'
+    },
+    {
+      title: 'Season-Spot — India-Focused Seasonal Travel Guide & AI Planner',
+      duration: 'Personal Project',
+      description: 'Engineered a seasonal travel guide and itinerary planner using FastAPI, Pydantic validation, and a validated JSON knowledge base. Integrates a Gemini API itinerary generation pipeline with structured outputs, regex-based JSON extraction, TTL caching, and a deterministic local fallback system.',
+      technologies: ['FastAPI', 'React', 'Gemini API', 'Pydantic', 'Material UI', 'Vercel', 'Python'],
+      github: 'https://github.com/HariN999/Season-Spot',
+      demo: 'https://season-spot.vercel.app/',
+      status: 'deployed'
+    },
+    {
       title: 'SocialeX — Text-First Social Network',
       duration: 'Jun 2025, Aug 2026',
       description: 'Built a full-stack text-first social network combining React, Node.js, and MongoDB. Features authenticated social interactions, user search, profile curation, and real-time 1-on-1 messaging via Socket.IO. Enforces strict server-side authorization boundaries, where user identity is derived from verified JWT handshakes to protect chat access and post deletion.',
       technologies: ['React', 'Node.js', 'Express.js', 'Socket.io', 'MongoDB', 'JWT Auth', 'CSS'],
-      github: 'https://github.com/HariN999/SocialeX.git',
+      github: 'https://github.com/HariN999/SocialeX',
       status: 'completed'
     },
     {
@@ -77,9 +77,9 @@ const Projects: React.FC = () => {
     {
       title: 'HelmetDetection — YOLOv3 Helmet Detection System',
       duration: 'Personal Project',
-      description: 'Developed a safety detection system using YOLOv3 and OpenCV to detect helmets in real-time. Features a lightweight Flask web interface for uploading images and displaying annotated bounding-box outputs.',
+      description: 'Developed a safety detection system using YOLOv3 and OpenCV to detect helmet compliance from input imagery. Features a lightweight Flask web interface for uploading images and displaying annotated bounding-box outputs with confidence scores.',
       technologies: ['Python', 'OpenCV', 'Flask', 'YOLOv3'],
-      github: 'https://github.com/HariN999/HelmetDetection.git',
+      github: 'https://github.com/HariN999/HelmetDetection',
       status: 'completed'
     }
   ];
@@ -135,12 +135,12 @@ const Projects: React.FC = () => {
                     <div className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded bg-blue-50/50 dark:bg-blue-950/20 text-blue-600 dark:text-blue-400 text-[10px] font-bold uppercase tracking-wider mb-4 border border-blue-100/30 dark:border-blue-900/20">
                       <Star size={10} className="fill-current flex-shrink-0" />
                       {index === 0 
-                        ? 'Featured · Capstone' 
+                        ? 'Presented at CIS 2026' 
                         : index === 1 
                         ? 'Featured · RAG / Document AI' 
                         : index === 2 
-                        ? 'Featured · Audio AI' 
-                        : 'Featured · AI Travel Planner'}
+                        ? 'Featured · Semantic Search' 
+                        : 'Featured · Audio AI'}
                     </div>
                   )}
 

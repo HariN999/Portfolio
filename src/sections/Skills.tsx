@@ -36,7 +36,7 @@ const Skills: React.FC = () => {
 
   const coreSkills = new Set([
     'Python', 'FastAPI', 'Transformers', 'PyTorch', 'React', 'Docker',
-    'PostgreSQL', 'MongoDB', 'ChromaDB'
+    'PostgreSQL', 'MongoDB', 'ChromaDB', 'Git & GitHub'
   ]);
 
   const containerVariants = {

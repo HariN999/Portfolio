@@ -11,8 +11,8 @@ const Experience: React.FC = () => {
       duration: '2022 – 2026',
       status: 'Completed',
       details: [
-        'Strong academic performance, graduating with a CGPA of 8.89 / 10.',
-        'Co-authored research paper on Telugu text summarization submitted to CIS 2026 (LNNS).',
+        'Graduated with a CGPA of 8.89 / 10.',
+        'Presented research on Telugu text summarization at the 7th Congress on Intelligent Systems (CIS 2026).',
         'Awarded Best Project Award at Malla Reddy University for the NLP news summarization platform.'
       ],
       coursework: ['Data Structures', 'Algorithms', 'AI/ML & NLP', 'Full-Stack Development', 'Database Systems', 'Software Engineering'],

@@ -10,13 +10,6 @@ const Hero: React.FC = () => {
     }
   };
 
-  const downloadResume = () => {
-    const link = document.createElement('a');
-    link.href = '/Hariharan_AI_Engineer_Resume.pdf';
-    link.download = 'Hariharan_AI_Engineer_Resume.pdf';
-    link.click();
-  };
-
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden transition-colors duration-300 px-4 sm:px-6 lg:px-8">
       {/* Background blobs */}
@@ -47,7 +40,7 @@ const Hero: React.FC = () => {
           </h1>
           
           <p className="text-xs sm:text-sm md:text-base font-bold text-zinc-500 dark:text-zinc-400 max-w-2xl mx-auto mb-4 tracking-widest font-mono uppercase">
-            AI Engineer — Backend Systems — GenAI
+            AI Engineer — Backend Engineer — Software Engineer
           </p>
           
           <p className="text-base sm:text-lg text-zinc-650 dark:text-zinc-400 max-w-2xl mx-auto mb-8 leading-relaxed font-sans">
@@ -79,13 +72,15 @@ const Hero: React.FC = () => {
             GitHub
           </a>
           
-          <button
-            onClick={downloadResume}
+          <a
+            href="/HariharanNarlakanti_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full sm:w-auto px-8 py-3.5 border border-zinc-300 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-900/50 font-semibold rounded-full hover:scale-[1.02] active:scale-[0.98] transition-all duration-300 flex items-center justify-center gap-2 text-sm"
           >
             <Download size={16} />
             Resume
-          </button>
+          </a>
         </motion.div>
 
         {/* Proof Metrics (Simplified Inline Metadata) */}
